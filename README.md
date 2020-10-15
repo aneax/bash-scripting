@@ -2,6 +2,7 @@
 
 - [User and Account Creation](wk1/README.md)
 - [Password Generation and Shell Script Arguments](wk2/README.md)
+- [Advanced Input, Output and Error](wk3/README.md)
 
 
 ## 1
@@ -40,3 +41,12 @@
 * `true`
 * `sleep`
 * `shift`
+
+## 3
+
+* `>`
+* `>`
+* `>&`
+* `&>`
+* `>&2`
+* `/dev/null`
