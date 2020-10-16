@@ -1,6 +1,6 @@
-`!!`: most recently executed command
-`!$`: expand to last command
-`etc`: stores configurations
+* `!!`: most recently executed command
+* `!$`: expand to last command
+* `etc`: stores configurations
 
 # Case Statements, Functions
 
@@ -67,9 +67,9 @@ echo ${NUM}
 
 ## Deleting and Disabling Linux Accounts
 
-`userdel`: delete accounts
-`chage`: change user password expiry information
-`usermod`: modify user account
+* `userdel`: delete accounts
+* `chage`: change user password expiry information
+* `usermod`: modify user account
 
 ```bash
 sudo chage -E 0 einstein
@@ -115,8 +115,8 @@ find / -name userdel 2>/dev/null
 * `gunzip`: unzip
 
 OPTION:
-`x`- extract
-`f`- files
-`z`- zipped
-`c`- create
-`v`- verbose
+* `x`- extract
+* `f`- files
+* `z`- zipped
+* `c`- create
+* `v`- verbose
