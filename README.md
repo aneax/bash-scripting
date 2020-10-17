@@ -21,5 +21,5 @@
 `!!`, `!$`, `getopts`, `bc`, `awk`, `let`, `expr`, `userdel`, `chage`, `usermod`, `locate`, `find`, `grep`, `tar`, `gzip`, `gunzip`
 
 ## 5 
-`cut`, `awk`, `netstat`, `^N`, `e$`
+`cut`, `awk`, `netstat`, `^N`, `e$`, `sort`, `du`, `geoiplookup`, `uniq`, `wc`
 

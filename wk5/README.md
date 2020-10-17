@@ -116,10 +116,75 @@ awk '{print $1, $2}'  lines.dat
 * `netstat`: print network connections
 
 ```bash
+# Remove row without ':'
+netstat -nutl |  netstat -nutl | grep ':'
+
+# Remove row starting with Active and Proto
 netstat -nutl | grep -v '^Active' | grep -v '^Proto'
 # Equivalent to 
 netstat -nutl | grep -Ev '^Active|^Proto'
 
 # 
 netstat -nutl | grep -Ev '^Active|^Proto' | awk '{print $4}' | awk -F ':' '{print $NF}'
+```
+
+## Sort and Uniq
+
+* `sort`
+
+```bash
+# Sort alphabetically
+sort /etc/passwd
+
+# Sort reverse
+sort -r /etc/passwd
+
+# Sort uid
+cut -d ':' -f 3 /etc/passwd | sort  -n
+
+# Numeric sort with 3rd key separated by ':' 
+cat /etc/passwd | sort -t ':' -k 3 -n
+```
+
+* `du`: file space usage/ disk usage in KiloBytes
+
+```bash
+# Print disk usage in ascending order
+sudo du /var | sort -n
+
+# Print in human readable way (sort doesn;t work for this in regular way)
+sudo du -h /var
+
+# For human numeric sort
+sudo du -h /var | sort -h
+
+# Has duplicates
+netstat -nutl | grep ':' | awk '{print $4}' | awk -F ':' '{print $NF}' | sort -n
+
+# For unique -u
+netstat -nutl | grep ':' | awk '{print $4}' | awk -F ':' '{print $NF}' | sort -nu
+```
+
+* `uniq` need sorted input to work
+
+```bash
+netstat -nutl | grep ':' | awk '{print $4}' | awk -F ':' '{print $NF}' | sort -n | uniq
+
+# To get number of occurances -c
+netstat -nutl | grep ':' | awk '{print $4}' | awk -F ':' '{print $NF}' | sort -n | uniq -c
+```
+
+* `wc` : Count
+  * `-w`: words
+  * `-c`: bytes
+  * `-l`: kines
+
+```bash
+# Print number of lines,  words and size
+wc /etc/passwd
+
+# Which accounts are using bash shell and count it
+grep bash /etc/passwd | wc -l
+#or
+grep -c bash /etc/passwd
 ```
